@@ -125,15 +125,15 @@
   }
 
   .h2 {
-    @apply text-5xl font-semibold text-black mt-2 mb-8;
+    @apply lg:text-5xl md:text-4xl text-4xl font-semibold text-black mt-2 mb-8;
   }
 
   .h3 {
-    @apply text-4xl font-bold text-black;
+    @apply lg:text-4xl md:text-3xl text-2xl font-bold text-black;
   }
 
   .section-line {
-    @apply uppercase text-brand-blue font-bold text-xl;
+    @apply uppercase text-brand-blue font-bold lg:text-xl md:text-lg;
   }
   .middle {
     left: calc(100% - 200px);
@@ -191,5 +191,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .footer-clippath {
+    clip-path: path(
+      "M 0,10% L 90,50 L 100,40 L 100,10 L 110,0 L 190,0 L 200,10 L 200,200 L 0,200 L 0,60 Z"
+    );
   }
 }

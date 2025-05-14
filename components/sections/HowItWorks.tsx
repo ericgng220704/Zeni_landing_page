@@ -8,7 +8,7 @@ export default function HowItWorksSection() {
   const [step, setStep] = useState(1);
 
   return (
-    <section className="md:px-16 lg:px-24 w-full min-h-dvh mt-32 !overflow-y-hidden flex flex-col items-center text-center">
+    <section className="px-4 md:px-16 lg:px-24 w-full min-h-dvh mt-32 !overflow-y-hidden flex flex-col items-center text-center">
       <div className="flex flex-col col-span-1">
         <span className="section-line">How Zeni Works</span>
         <h2 className="h2">Getting started with Zeni is as easy as 1-2-3</h2>
@@ -59,7 +59,7 @@ export default function HowItWorksSection() {
           </TabsList>
         </Tabs>
       </div>
-      <div className="relative flex items-center justify-center p-16 max-h-[600px] mt-6">
+      <div className="relative flex items-center justify-center p-16 max-h-[600px] mt-6 ">
         <div className="rounded-3xl overflow-hidden pointer-events-none -z-20">
           <Image
             fill

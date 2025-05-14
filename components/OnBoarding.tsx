@@ -30,7 +30,7 @@ export default function OnboardingVisualSteps({
       }}
     >
       {" "}
-      <div className="min-w-[600px]">
+      <div className="md:min-w-[600px] [@media(min-width:400px)]:min-w-[400px] overflow-y-hidden">
         <div className="pb-4 flex flex-col justify-between">
           <div className="flex flex-col items-center justify-center">
             {/* Display progress bar */}

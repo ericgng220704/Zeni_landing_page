@@ -7,16 +7,16 @@ import { DemoChart } from "../DemoChart";
 
 export default function ProductSection() {
   return (
-    <div className="md:px-16 lg:px-24 w-full bg-brand-black rounded-[4rem] min-h-[200dvh] pt-20 pb-36 ">
+    <div className="md:px-16 lg:px-24 px-4 w-full bg-brand-black rounded-[4rem] min-h-[200dvh] pt-20 pb-36 ">
       <div>
         <span className="section-line !text-brand-ice-blue">FEATURES</span>
         <h2 className="h2 !text-brand-cream">What make us outstanding?</h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-8 my-8">
+      <div className="flex flex-col md:grid grid-cols-2 gap-8 my-8">
         <Card className="w-full bg-[#212529]/90 outline-none border-none !p-0 !py-0 relative overflow-hidden rounded-4xl">
           <CardHeader className="!p-0 relative">
-            <div className="size-full min-h-[500px] flex flex-col justify-end items-start p-20">
+            <div className="size-full xl:min-h-[500px] md:min-h-[400px] flex flex-col justify-end items-start xl:p-20 lg:p-12 p-8">
               <div className="flex flex-col z-50">
                 <div className="text-gray-800 font-bold flex items-center justify-center bg-brand-cream w-16 h-16 text-3xl mb-6 rounded-2xl">
                   <svg
@@ -37,7 +37,7 @@ export default function ProductSection() {
                   </svg>
                 </div>
                 <h3 className="h3 !text-brand-cream mb-3">AI Agent</h3>
-                <span className="text-xl text-gray-200">
+                <span className="text-lg lg:text-xl text-gray-200">
                   {/* Zeni's intelligent chatbot doesn't just answer your
                   questions—it proactively assists you, turning your simple
                   natural language commands into real actions within seconds.
@@ -63,7 +63,7 @@ export default function ProductSection() {
         </Card>
         <Card className="w-full bg-[#212529]/90 outline-none border-none !p-0 !py-0 relative overflow-hidden rounded-4xl">
           <CardHeader className="!p-0 relative">
-            <div className="size-full min-h-[500px] flex flex-col justify-end items-start p-20">
+            <div className="size-full xl:min-h-[500px] min-h-[400px] flex flex-col justify-end items-start xl:p-20 lg:p-12 p-8">
               <div className="flex flex-col z-50">
                 <div className="text-gray-800 font-bold flex items-center justify-center bg-brand-cream w-16 h-16 text-3xl mb-6 rounded-2xl">
                   <svg
@@ -86,7 +86,7 @@ export default function ProductSection() {
                 <h3 className="h3 !text-brand-cream mb-3">
                   Personalized Experience
                 </h3>
-                <span className="text-xl text-gray-200">
+                <span className="text-lg lg:text-xl text-gray-200">
                   Customize your profile, visual elements, and analyzer to align
                   perfectly with your financial goals and style.
                 </span>
@@ -113,8 +113,8 @@ export default function ProductSection() {
       </div>
 
       <Card className="w-full bg-[#212529]/90 outline-none border-none !p-0 !py-0 mt-20 relative overflow-hidden rounded-4xl">
-        <CardContent className="grid grid-cols-2 !p-0 relative">
-          <div className="size-full flex flex-col justify-end items-start p-20">
+        <CardContent className="flex flex-col lg:grid lg:grid-cols-2 !p-0 relative">
+          <div className="order-2 lg:order-1 size-full xl:min-h-[500px] [@media(min-width:600px)]:min-h-min  min-h-[400px] flex flex-col justify-end items-start xl:p-20 lg:p-12 p-8">
             <div className="flex flex-col z-50">
               <div className="text-gray-800 font-bold flex items-center justify-center bg-brand-cream w-16 h-16 text-3xl mb-6 rounded-2xl">
                 <svg
@@ -137,37 +137,36 @@ export default function ProductSection() {
               <h3 className="h3 !text-brand-cream mb-3">
                 Beautifully Visualized Data
               </h3>
-              <span className="text-xl text-gray-200">
+              <span className="text-lg lg:text-xl text-gray-200">
                 Understand your finances instantly with interactive, clear
                 charts and visual summaries. Turn complex data into insights at
                 a glance.
               </span>
             </div>
           </div>
-          <div className="flex items-center justify-center size-full relative min-h-[450px]">
+          <div className="order-1 lg:order-2 [@media(max-width:600px)]:hidden flex items-center justify-center size-full relative lg:min-h-[450px] lg:pt-0 pt-8">
             <div className="max-h-2/3 flex items-center justify-center rounded-2xl overflow-hidden z-50">
               <DemoChart />
             </div>
           </div>
           <Image
-            src={"/bg-top-right.jpg"}
+            src="/bg-top-right.jpg"
             alt="background top right corner"
-            className="inset-0 object-cover size-full"
             fill
+            className="inset-0 object-cover size-full"
           />
-
           <ProgressiveBlur
-            className="pointer-events-none absolute bottom-0 left h-full w-2/3"
+            className="pointer-events-none absolute bottom-0 left-0 w-full h-0 lg:w-2/3 lg:h-full"
             direction="left"
             blurIntensity={8}
           />
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-2 gap-8 my-8">
+      <div className="flex flex-col md:grid grid-cols-2 gap-8 my-8">
         <Card className="w-full bg-[#212529]/90 outline-none border-none !p-0 !py-0 relative overflow-hidden rounded-4xl">
           <CardHeader className="!p-0 relative">
-            <div className="size-full min-h-[500px] flex flex-col justify-end items-start p-20">
+            <div className="size-full xl:min-h-[500px] min-h-[400px] flex flex-col justify-end items-start xl:p-20 lg:p-12 p-8">
               <div className="flex flex-col z-50">
                 <div className="text-gray-800 font-bold flex items-center justify-center bg-brand-cream w-16 h-16 text-3xl mb-6 rounded-2xl">
                   <svg
@@ -190,7 +189,7 @@ export default function ProductSection() {
                 <h3 className="h3 !text-brand-cream mb-3">
                   Modern & User-Friendly Interface
                 </h3>
-                <span className="text-xl text-gray-200">
+                <span className="text-lg lg:text-xl text-gray-200">
                   Enjoy financial management through a smooth, visually
                   appealing, and intuitive app experience. Zeni prioritizes
                   clarity and ease of use in every interaction.
@@ -212,7 +211,7 @@ export default function ProductSection() {
         </Card>
         <Card className="w-full bg-[#212529]/90 outline-none border-none !p-0 !py-0 relative overflow-hidden rounded-4xl">
           <CardHeader className="!p-0 relative">
-            <div className="size-full min-h-[500px] flex flex-col justify-end items-start p-20">
+            <div className="size-full xl:min-h-[500px] min-h-[400px] flex flex-col justify-end items-start xl:p-20 lg:p-12 p-8">
               <div className="flex flex-col z-50">
                 <div className="text-gray-800 font-bold flex items-center justify-center bg-brand-cream w-16 h-16 text-3xl mb-6 rounded-2xl">
                   <svg
@@ -237,7 +236,7 @@ export default function ProductSection() {
                   </svg>
                 </div>
                 <h3 className="h3 !text-brand-cream mb-3">Built With Care</h3>
-                <span className="text-xl text-gray-200">
+                <span className="text-lg lg:text-xl text-gray-200">
                   Every feature in Zeni reflects our commitment to your feedback
                   and needs. We consistently listen, adapt, and enhance Zeni to
                   ensure your best experience possible.

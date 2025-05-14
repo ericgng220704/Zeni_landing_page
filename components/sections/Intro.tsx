@@ -35,13 +35,13 @@ export default function IntroSection() {
   }, []);
 
   return (
-    <section className="md:px-16 lg:px-24 w-full h-dvh flex flex-col pt-28">
-      <div className="grid grid-cols-2 gap-8">
+    <section className="px-4 md:px-16 lg:px-24 w-full h-dvh md:pt-16 lg:pt-28 pt-8">
+      <div className="md:flex md:flex-col md:gap-8 lg:grid lg:grid-cols-2 xl:gap-8">
         <div className="flex flex-col text-left col-span-1">
           <div className="w-full">
             <span className="section-line">Introduction </span>
           </div>
-          <h1 className="text-5xl font-semibold text-black mt-2 mb-8">
+          <h1 className="text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-black mt-2 mb-8">
             Because your financial story is personal
           </h1>
           <div className="flex flex-col gap-4 pr-24">
@@ -56,7 +56,7 @@ export default function IntroSection() {
               alongside you.
             </span>
           </div>
-          <div className="w-full mt-36 flex gap-6 items-center pr-24">
+          <div className="w-full hidden lg:flex lg:mt-20 xl:mt-36 gap-6 items-center pr-24">
             <div>
               <svg
                 className="rotating-svg"

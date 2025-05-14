@@ -9,6 +9,8 @@ import NavBar from "@/components/Navbar";
 import ProductSection from "@/components/sections/Product";
 import IntroSection from "@/components/sections/Intro";
 import DemoSection from "@/components/sections/HowItWorks";
+import AppDemo from "@/components/sections/Demo";
+import Footer from "@/components/sections/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,11 +47,9 @@ export default function Home() {
   return (
     <main className="">
       <NavBar />
-
-      {/* Wrap the infinite slider in a container */}
       <HeroSection />
       <InfiniteSliderSection />
-      <div ref={sliderWrapperRef} className="mt-28">
+      <div ref={sliderWrapperRef} className="lg:mt-28 ">
         <IntroSection />
       </div>
 
@@ -57,17 +57,8 @@ export default function Home() {
         <ProductSection />
       </div>
       <DemoSection />
-      <div className="min-h-dvh flex items-center justify-center bg-">
-        <div className="">
-          <video
-            src="/demo.mp4"
-            autoPlay
-            muted
-            loop
-            className="size-full object-cover"
-          />
-        </div>
-      </div>
+      <AppDemo />
+      <Footer />
     </main>
   );
 }
