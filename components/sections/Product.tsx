@@ -7,7 +7,10 @@ import { DemoChart } from "../DemoChart";
 
 export default function ProductSection() {
   return (
-    <div className="md:px-16 lg:px-24 px-4 w-full bg-brand-black rounded-[4rem] min-h-[200dvh] pt-20 pb-36 ">
+    <div
+      id="features"
+      className="md:px-16 lg:px-24 px-4 w-full bg-brand-black rounded-[4rem] min-h-[200dvh] pt-20 pb-36 "
+    >
       <div>
         <span className="section-line !text-brand-ice-blue">FEATURES</span>
         <h2 className="h2 !text-brand-cream">What make us outstanding?</h2>

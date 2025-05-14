@@ -35,7 +35,10 @@ export default function IntroSection() {
   }, []);
 
   return (
-    <section className="px-4 md:px-16 lg:px-24 w-full h-dvh md:pt-16 lg:pt-28 pt-8">
+    <section
+      id="about"
+      className="px-4 md:px-16 lg:px-24 w-full h-dvh md:pt-16 lg:pt-28 pt-8"
+    >
       <div className="md:flex md:flex-col md:gap-8 lg:grid lg:grid-cols-2 xl:gap-8">
         <div className="flex flex-col text-left col-span-1">
           <div className="w-full">

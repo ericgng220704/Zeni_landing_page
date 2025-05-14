@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HeroSection from "@/components/sections/Hero";
@@ -17,6 +17,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const sliderWrapperRef: any = useRef(null);
   const productRef = useRef(null);
+
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     // First, pin the slider so it stays fixed during the scroll.
@@ -45,20 +47,32 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="">
-      <NavBar />
-      <HeroSection />
-      <InfiniteSliderSection />
-      <div ref={sliderWrapperRef} className="lg:mt-28 ">
-        <IntroSection />
-      </div>
+    <div className="relative">
+      {!videoReady && (
+        <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
+          <div className="animate-spin h-16 w-16 border-4 border-t-blue-600 rounded-full" />
+        </div>
+      )}
 
-      <div ref={productRef} className="">
-        <ProductSection />
-      </div>
-      <DemoSection />
-      <AppDemo />
-      <Footer />
-    </main>
+      <main
+        className={`transition-opacity duration-500 ${
+          videoReady ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <NavBar />
+        <HeroSection onVideoReady={() => setVideoReady(true)} />
+        <InfiniteSliderSection />
+        <div ref={sliderWrapperRef} className="lg:mt-28 ">
+          <IntroSection />
+        </div>
+
+        <div ref={productRef} className="">
+          <ProductSection />
+        </div>
+        <DemoSection />
+        <AppDemo />
+        <Footer />
+      </main>
+    </div>
   );
 }

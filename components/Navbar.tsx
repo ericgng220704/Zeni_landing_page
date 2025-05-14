@@ -117,6 +117,7 @@ export default function NavBar() {
             <CTAButton
               id="product-button"
               title="Try it now"
+              href="https://zeni-ericgng.vercel.app/"
               rightIcon={<TiLocationArrow />}
               containerClass="[@media(max-width:400px)]:hidden flex justify-center items-center gap-1 border border-1 border-black/20 !text-sm !bg-brand-ice-blue text-"
             />

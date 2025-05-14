@@ -259,7 +259,7 @@
 // }
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, AnchorHTMLAttributes } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { TiLocationArrow } from "react-icons/ti";
@@ -267,13 +267,37 @@ import CTAButton from "../CTAButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function HeroSection() {
+type HeroSectionProps = {
+  onVideoReady: () => void;
+};
+
+export default function HeroSection({ onVideoReady }: HeroSectionProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const vidRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const textReveal1 = useRef<HTMLSpanElement>(null);
   const textReveal2 = useRef<HTMLSpanElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const buttonRef = useRef<HTMLButtonElement & HTMLAnchorElement>(null);
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+
+    const onReady = () => onVideoReady();
+    if (vid.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) {
+      onReady();
+    } else {
+      vid.addEventListener("canplay", onReady, { once: true });
+      vid.addEventListener("loadeddata", onReady, { once: true });
+    }
+
+    return () => {
+      vid.removeEventListener("canplay", onReady);
+      vid.removeEventListener("loadeddata", onReady);
+    };
+  }, [onVideoReady]);
 
   useEffect(() => {
     if (!vidRef.current || !textRef.current) return;
@@ -392,6 +416,7 @@ export default function HeroSection() {
               muted
               loop
               className="w-full h-full object-cover"
+              ref={videoRef}
             />
           </div>
         </div>
@@ -416,6 +441,7 @@ export default function HeroSection() {
               <CTAButton
                 id="cta-button-hero"
                 title="Try it now"
+                href="https://zeni-ericgng.vercel.app/"
                 rightIcon={<TiLocationArrow />}
                 containerClass="bg-brand-ice-blue flex items-center justify-center gap-1 !text-lg"
                 ref={buttonRef}
